@@ -4,7 +4,7 @@ $borderColorActive: $primary;
 $subTabComplementary: #ffffff;
 $subTabColor: #337ab7;
 
-:host {
+tabset {
   display: block;
   margin: auto;
   overflow: hidden;
@@ -12,12 +12,12 @@ $subTabColor: #337ab7;
   &:after {
     clear: both;
   }
-}
 
-div.tab-collection {
-  overflow: hidden;
-  border-bottom: 1px solid #eaecee;
-  background-color: transparent;
+  > div.tab-collection {
+    overflow: hidden;
+    border-bottom: 1px solid #eaecee;
+    background-color: transparent;
+  }
 }
 
 tab {
