@@ -5,7 +5,8 @@ declare let jQuery;
 
 @Component({
   selector: 'tab',
-  template: `{{ title }}`
+  template: `{{ title }}`,
+  styleUrls: ['./tab.component.scss']
 })
 export class TabComponent {
   private id: string = uuid();

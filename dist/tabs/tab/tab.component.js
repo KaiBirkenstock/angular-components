@@ -15,7 +15,8 @@ var TabComponent = /** @class */ (function () {
     TabComponent.decorators = [
         { type: Component, args: [{
                     selector: 'tab',
-                    template: "{{ title }}"
+                    template: "{{ title }}",
+                    styles: ["\n    :host{float:left;position:relative;display:block;padding:.5rem 1rem;cursor:pointer;font-weight:600;padding-top:12px;padding-bottom:12px;border:1px solid transparent;margin-bottom:-1px}:host.active,:host:hover{box-shadow:inset 0 -2px #1E1934;position:relative;background-color:transparent;border-bottom:medium none}:host.active{color:#575757;cursor:default}:host:hover{color:#1E1934;cursor:pointer}\n  "]
                 },] },
     ];
     /** @nocollapse */

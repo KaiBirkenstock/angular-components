@@ -1,0 +1,34 @@
+$subTabColor: #337ab7;
+$subTabComplementary: #ffffff;
+
+:host {
+  clear: both;
+  display: block;
+  > div {
+    background-color: #fff;
+    border-radius: 0;
+    padding: 10px;
+    display: none;
+    &.visible {
+      display: block;
+    }
+  }
+
+  tab {
+    color: $subTabColor;
+    background-color: $subTabComplementary;
+    padding: 10px 15px !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+    &.active {
+      color: $subTabComplementary;
+      background-color: $subTabColor;
+    }
+
+    tab-content {
+      > div {
+        border: medium none;
+      }
+    }
+  }
+}
