@@ -7,8 +7,8 @@ import {TabContentComponent} from './tab-content/tab-content.component';
 
 @Component({
   selector: 'tabset',
-  template: `
-    <ng-content></ng-content>`
+  template: `<ng-content></ng-content>`,
+  styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent implements AfterViewInit {
   _activeTab: any;

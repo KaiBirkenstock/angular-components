@@ -4,7 +4,7 @@ $borderColorActive: $primary;
 $subTabComplementary: #ffffff;
 $subTabColor: #337ab7;
 
-tabset {
+:host {
   display: block;
   margin: auto;
   overflow: hidden;

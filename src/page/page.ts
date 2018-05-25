@@ -4,7 +4,8 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'page-component',
-  templateUrl: './page.html'
+  templateUrl: './page.html',
+  styleUrls: ['./page.scss']
 })
 export class PageComponent {
   @Input() pageTitle: string = '';

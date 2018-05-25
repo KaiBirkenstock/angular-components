@@ -4,6 +4,7 @@ import {EventEmitter, Component, Output, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'modal',
   templateUrl: './modal.component.html',
+  styleUrls: ['./modal.scss'],
   inputs: ['visible', 'headline', 'height']
 })
 export class Modal implements OnInit {

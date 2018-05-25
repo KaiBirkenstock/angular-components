@@ -8,7 +8,8 @@ import {TranslateService} from '@ngx-translate/core';
  */
 @Component({
   selector: 'andavis-select',
-  templateUrl: './andavis-select.component.html'
+  templateUrl: './andavis-select.component.html',
+  styleUrls: ['./andavis-select.component.scss']
 })
 export class AndavisSelect implements OnInit {
   private _value: any;

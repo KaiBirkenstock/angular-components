@@ -16,7 +16,8 @@ let datePickerConfig: any = {
 @Component({
   selector: 'date-picker',
   template: `<input type="text" [value]="value" class="form-control date-picker" #dateInput  [disabled]="disabled"/>`,
-  inputs: ['disabled']
+  inputs: ['disabled'],
+  styleUrls: ['./date-picker.scss']
 })
 export class DatePickerComponent {
   @Input() value: 'any';
