@@ -42101,16 +42101,16 @@ var components_list_1 = __webpack_require__(293);
 var tabs_module_1 = __webpack_require__(609);
 var AlertProvider_1 = __webpack_require__(614);
 var forms_1 = __webpack_require__(62);
-var IonicComponentsModule = /** @class */ (function () {
-    function IonicComponentsModule() {
+var AngularComponentsModule = /** @class */ (function () {
+    function AngularComponentsModule() {
     }
-    IonicComponentsModule_1 = IonicComponentsModule;
-    IonicComponentsModule.forRoot = function () {
+    AngularComponentsModule_1 = AngularComponentsModule;
+    AngularComponentsModule.forRoot = function () {
         return {
-            ngModule: IonicComponentsModule_1
+            ngModule: AngularComponentsModule_1
         };
     };
-    IonicComponentsModule = IonicComponentsModule_1 = __decorate([
+    AngularComponentsModule = AngularComponentsModule_1 = __decorate([
         core_1.NgModule({
             imports: [
                 forms_1.FormsModule,
@@ -42129,11 +42129,11 @@ var IonicComponentsModule = /** @class */ (function () {
                 AlertProvider_1.AlertProvider
             ]
         })
-    ], IonicComponentsModule);
-    return IonicComponentsModule;
-    var IonicComponentsModule_1;
+    ], AngularComponentsModule);
+    return AngularComponentsModule;
+    var AngularComponentsModule_1;
 }());
-exports.IonicComponentsModule = IonicComponentsModule;
+exports.AngularComponentsModule = AngularComponentsModule;
 
 
 /***/ }),

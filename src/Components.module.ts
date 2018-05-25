@@ -29,10 +29,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AlertProvider
   ]
 })
-export class IonicComponentsModule {
+export class AngularComponentsModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: IonicComponentsModule
+      ngModule: AngularComponentsModule
     };
   }
 }

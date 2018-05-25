@@ -4,15 +4,15 @@ import { COMPONENTS } from './components.list';
 import { TabsModule } from './tabs/tabs.module';
 import { AlertProvider } from './alert/AlertProvider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-var IonicComponentsModule = /** @class */ (function () {
-    function IonicComponentsModule() {
+var AngularComponentsModule = /** @class */ (function () {
+    function AngularComponentsModule() {
     }
-    IonicComponentsModule.forRoot = function () {
+    AngularComponentsModule.forRoot = function () {
         return {
-            ngModule: IonicComponentsModule
+            ngModule: AngularComponentsModule
         };
     };
-    IonicComponentsModule.decorators = [
+    AngularComponentsModule.decorators = [
         { type: NgModule, args: [{
                     imports: [
                         FormsModule,
@@ -32,7 +32,7 @@ var IonicComponentsModule = /** @class */ (function () {
                     ]
                 },] },
     ];
-    return IonicComponentsModule;
+    return AngularComponentsModule;
 }());
-export { IonicComponentsModule };
+export { AngularComponentsModule };
 //# sourceMappingURL=Components.module.js.map
