@@ -2,7 +2,7 @@
  * angular-components - Angular components collection
  * @version v0.0.1
  * @author Kai Birkenstock
- * @link https://github.com/trekhleb/angular-library-seed#readme
+ * @link https://github.com/KaiBirkenstock/angular-components#readme
  * @license MIT
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -57758,7 +57758,7 @@ exports = module.exports = __webpack_require__(17)(false);
 
 
 // module
-exports.push([module.i, ":host {\n  display: block;\n  margin: auto;\n  overflow: hidden; }\n  :host div.tab-collection {\n    overflow: hidden;\n    border-bottom: 1px solid #eaecee;\n    background-color: transparent; }\n  :host:after {\n    clear: both; }\n  :host tab {\n    float: left;\n    position: relative;\n    display: block;\n    padding: .5rem 1rem;\n    cursor: pointer;\n    font-weight: 600;\n    padding-top: 12px;\n    padding-bottom: 12px;\n    border: 1px solid transparent;\n    margin-bottom: -1px; }\n    :host tab.active, :host tab:hover {\n      box-shadow: inset 0 -2px #1E1934;\n      position: relative;\n      background-color: transparent;\n      border-bottom: medium none; }\n    :host tab.active {\n      color: #575757;\n      cursor: default; }\n    :host tab:hover {\n      color: #1E1934;\n      cursor: pointer; }\n  :host tab-content {\n    clear: both;\n    display: block; }\n    :host tab-content > div {\n      background-color: #fff;\n      border-radius: 0;\n      padding: 10px;\n      display: none; }\n      :host tab-content > div.visible {\n        display: block; }\n    :host tab-content tab {\n      color: #337ab7;\n      background-color: #ffffff;\n      padding: 10px 15px !important;\n      border: none !important;\n      margin-bottom: 0 !important; }\n      :host tab-content tab.active {\n        color: #ffffff;\n        background-color: #337ab7; }\n      :host tab-content tab tab-content > div {\n        border: medium none; }\n", ""]);
+exports.push([module.i, ":host {\n  display: block;\n  margin: auto;\n  overflow: hidden; }\n  :host:after {\n    clear: both; }\n\ndiv.tab-collection {\n  overflow: hidden;\n  border-bottom: 1px solid #eaecee;\n  background-color: transparent; }\n\ntab {\n  float: left;\n  position: relative;\n  display: block;\n  padding: .5rem 1rem;\n  cursor: pointer;\n  font-weight: 600;\n  padding-top: 12px;\n  padding-bottom: 12px;\n  border: 1px solid transparent;\n  margin-bottom: -1px; }\n  tab.active, tab:hover {\n    box-shadow: inset 0 -2px #1E1934;\n    position: relative;\n    background-color: transparent;\n    border-bottom: medium none; }\n  tab.active {\n    color: #575757;\n    cursor: default; }\n  tab:hover {\n    color: #1E1934;\n    cursor: pointer; }\n\ntab-content {\n  clear: both;\n  display: block; }\n  tab-content > div {\n    background-color: #fff;\n    border-radius: 0;\n    padding: 10px;\n    display: none; }\n    tab-content > div.visible {\n      display: block; }\n  tab-content tab {\n    color: #337ab7;\n    background-color: #ffffff;\n    padding: 10px 15px !important;\n    border: none !important;\n    margin-bottom: 0 !important; }\n    tab-content tab.active {\n      color: #ffffff;\n      background-color: #337ab7; }\n    tab-content tab tab-content > div {\n      border: medium none; }\n", ""]);
 
 // exports
 

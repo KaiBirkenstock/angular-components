@@ -18,16 +18,16 @@
   ],
   "author": {
     "name": "Kai Birkenstock",
-    "url": "https://github.com/KaiBirkenstock/ionic-components"
+    "url": "https://github.com/KaiBirkenstock/angular-components"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KaiBirkenstock/ionic-components"
+    "url": "https://github.com/KaiBirkenstock/angular-components"
   },
   "bugs": {
-    "url": "https://github.com/KaiBirkenstock/ionic-components/issues"
+    "url": "https://github.com/KaiBirkenstock/angular-components/issues"
   },
-  "homepage": "https://github.com/trekhleb/angular-library-seed#readme",
+  "homepage": "https://github.com/KaiBirkenstock/angular-components#readme",
   "scripts": {
     "build": "npm run build:esm && npm run build:umd",
     "build:esm": "gulp inline-templates && npm run ngcompile",
@@ -40,7 +40,7 @@
     "clean:all": "npm run clean:tmp && rimraf node_modules",
     "clean:tmp": "rimraf coverage dist tmp docs",
     "codecov": "cat coverage/lcov.info | codecov",
-    "docs": "compodoc -p tsconfig.json -d docs --disableCoverage --disablePrivateOrInternalSupport",
+    "docs": "compodoc -p tsconfig.json -d docs --disableCoverage --disableInternal",
     "explorer": "source-map-explorer ./dist/index.umd.js",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "lint": "npm run tslint 'src/**/*.ts'",
