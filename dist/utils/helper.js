@@ -1,6 +1,6 @@
 import { moment } from './momentConfig';
-export function toNumber(string) {
-    return Number(string.replace(',', '.'));
+export function toNumber(value) {
+    return Number(value.replace(',', '.'));
 }
 export function toArray(iterable, start, end) {
     if (!iterable || !iterable.length) {
@@ -12,7 +12,8 @@ export function toArray(iterable, start, end) {
     if (Array.prototype.slice) {
         return Array.prototype.slice.call(iterable, start || 0, end || iterable.length);
     }
-    var array = [], i;
+    var array = [];
+    var i;
     start = start || 0;
     end = end ? ((end < 0) ? iterable.length + end : end) : iterable.length;
     for (i = start; i < end; i++) {
@@ -85,7 +86,7 @@ export function deUmlaut(value) {
 }
 export function camelize(str) {
     return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
-        return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+        return index === 0 ? letter.toLowerCase() : letter.toUpperCase();
     }).replace(/\s+/g, '');
 }
 export function getMoment(timeString) {
@@ -98,7 +99,7 @@ export function formatTime(time) {
 }
 export function calcDiffPercentage(value1, value2) {
     var diff = (((value1 / value2) * 100) - 100);
-    diff = diff == Infinity ? 0 : diff;
+    diff = diff === Infinity ? 0 : diff;
     return decimalAdjust('round', diff);
 }
 /*
@@ -110,7 +111,7 @@ export function getGoodWillValue(value1, value2, settings) {
     var goodWillBelow = settings.get('approval_goodwill_below');
     var retVal = false;
     var diff = calcDiffPercentage(value1, value2);
-    if (Math.sign(diff) == 1) {
+    if (Math.sign(diff) === 1) {
         retVal = diff <= goodWillAbove;
     }
     else {
@@ -123,16 +124,6 @@ export function reduce(entries, field) {
     var value = entries.map(function (entry) { return entry[field]; }).reduce(function (sum, duration) { return sum + duration; });
     value = Math.round(value * 100) / 100;
     return isNaN(value) ? 0 : value;
-}
-export function getWorklogBorderColor(worklog, settings) {
-    if (worklog.type !== 'Work') {
-        return 'yellow';
-    }
-    else {
-        var alerts = worklog.alerts.map(function (alert) { return alert.get('Type'); }).toSet();
-        var hasAlerts = alerts.some(function (v) { return settings.get('alerts').includes(v); });
-        return getGoodWillValue(worklog.workedDuration, worklog.plannedDuration, settings) && !hasAlerts ? 'green' : 'red';
-    }
 }
 export function detectIE() {
     var ua = window.navigator.userAgent;

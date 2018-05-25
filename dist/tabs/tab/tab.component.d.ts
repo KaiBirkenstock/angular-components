@@ -1,10 +1,9 @@
-import { EventEmitter } from '@angular/core';
 export declare class TabComponent {
-    id: string;
+    private id;
     title: string;
     index: string;
-    activate: EventEmitter<any>;
-    active: boolean;
-    trackHostClickEvent(event: any): void;
-    setActive(bool: any): void;
+    private activate;
+    private active;
+    protected trackHostClickEvent(): void;
+    private setActive(bool);
 }

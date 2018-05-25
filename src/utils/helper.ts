@@ -1,8 +1,8 @@
 import {List} from 'immutable';
-import {moment, rangeMoment} from './momentConfig';
+import {moment} from './momentConfig';
 
-export function toNumber(string: String) {
-  return Number(string.replace(',', '.'));
+export function toNumber(value: string) {
+  return Number(value.replace(',', '.'));
 }
 
 export function toArray(iterable, start?, end?) {
@@ -16,8 +16,8 @@ export function toArray(iterable, start?, end?) {
     return Array.prototype.slice.call(iterable, start || 0, end || iterable.length);
   }
 
-  var array = [],
-    i;
+  const array = [];
+  let i;
   start = start || 0;
   end = end ? ((end < 0) ? iterable.length + end : end) : iterable.length;
   for (i = start; i < end; i++) {
@@ -32,7 +32,7 @@ export function objectToArray(object: object, keyName: string = 'label', valueNa
     o[keyName] = object[key];
     o[valueName] = key;
     return o;
-  })
+  });
 }
 
 export function decimalAdjust(type, value, exp = -2) {
@@ -56,7 +56,7 @@ export function decimalAdjust(type, value, exp = -2) {
 
 
 export function applyMixins(derivedCtor: any, baseCtors: any[]) {
-  baseCtors.forEach(baseCtor => {
+  baseCtors.forEach((baseCtor: any) => {
     Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
       if (name !== 'constructor') {
         derivedCtor.prototype[name] = baseCtor.prototype[name];
@@ -93,8 +93,8 @@ export function deUmlaut(value) {
 }
 
 export function camelize(str) {
-  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
-    return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (letter, index) => {
+    return index === 0 ? letter.toLowerCase() : letter.toUpperCase();
   }).replace(/\s+/g, '');
 }
 
@@ -111,7 +111,7 @@ export function formatTime(time) {
 
 export function calcDiffPercentage(value1: number, value2: number) {
   let diff = (((value1 / value2) * 100) - 100);
-  diff = diff == Infinity ? 0 : diff;
+  diff = diff === Infinity ? 0 : diff;
 
   return decimalAdjust('round', diff);
 }
@@ -121,13 +121,13 @@ export function calcDiffPercentage(value1: number, value2: number) {
  @param2 value2 e.g. worklog.planneDuration
  */
 export function getGoodWillValue(value1: number, value2: number, settings): boolean {
-  let goodWillAbove = settings.get('approval_goodwill_above');
-  let goodWillBelow = settings.get('approval_goodwill_below');
+  const goodWillAbove = settings.get('approval_goodwill_above');
+  const goodWillBelow = settings.get('approval_goodwill_below');
 
   let retVal = false;
-  let diff = calcDiffPercentage(value1, value2);
+  const diff = calcDiffPercentage(value1, value2);
 
-  if (Math.sign(diff) == 1) {
+  if (Math.sign(diff) === 1) {
     retVal = diff <= goodWillAbove;
   } else {
     retVal = Math.abs(diff) <= goodWillBelow;
@@ -136,21 +136,10 @@ export function getGoodWillValue(value1: number, value2: number, settings): bool
 }
 
 export function reduce(entries, field = 'duration') {
-  let value = entries.map(entry => entry[field]).reduce((sum: number, duration: number) => sum + duration);
+  let value = entries.map((entry: any) => entry[field]).reduce((sum: number, duration: number) => sum + duration);
   value = Math.round(value * 100) / 100;
 
   return isNaN(value) ? 0 : value;
-}
-
-export function getWorklogBorderColor(worklog, settings: any) {
-  if (worklog.type !== 'Work') {
-    return 'yellow';
-  } else {
-    let alerts = worklog.alerts.map(alert => alert.get('Type')).toSet();
-    let hasAlerts = alerts.some(v => settings.get('alerts').includes(v));
-
-    return getGoodWillValue(worklog.workedDuration, worklog.plannedDuration, settings) && !hasAlerts ? 'green' : 'red';
-  }
 }
 
 export function detectIE() {

@@ -36,6 +36,7 @@
     "build:umd:watch": "npm run build:umd -- --watch",
     "build:watch": "concurrently --raw \"npm run build:umd:watch\" \"npm run build:esm:watch\"",
     "ci": "npm run lint && npm run test && npm run build && npm run docs",
+    "ci2": "npm run build && npm run docs",
     "clean:all": "npm run clean:tmp && rimraf node_modules",
     "clean:tmp": "rimraf coverage dist tmp docs",
     "codecov": "cat coverage/lcov.info | codecov",
@@ -57,6 +58,7 @@
   "peerDependencies": {
     "@angular/core": "5.2.10",
     "@angular/common": "5.2.10",
+    "uuid": "3.2.1",
     "bootbox": "4.4.0",
     "moment-range": "4.0.0",
     "timers": "0.1.1",

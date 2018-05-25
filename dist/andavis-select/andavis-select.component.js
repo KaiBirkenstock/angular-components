@@ -75,7 +75,8 @@ var AndavisSelect = /** @class */ (function () {
     AndavisSelect.decorators = [
         { type: Component, args: [{
                     selector: 'andavis-select',
-                    template: "\n    <label class=\"select-label\">\n      {{label}}\n      <select class=\"form-control\" [formControl]=\"selection\" [required]=\"required\">\n        <option value=\"please_choose\" *ngIf=\"!disableEmptySelection\">{{ pleaseChooseLabel }}</option>\n        <option [value]=\"getValue(option)\" *ngFor=\"let option of options\">{{getLabel(option)}}</option>\n      </select>\n    </label>\n  "
+                    template: "\n    <label class=\"select-label\">\n      {{label}}\n      <select class=\"form-control\" [formControl]=\"selection\" [required]=\"required\">\n        <option value=\"please_choose\" *ngIf=\"!disableEmptySelection\">{{ pleaseChooseLabel }}</option>\n        <option [value]=\"getValue(option)\" *ngFor=\"let option of options\">{{getLabel(option)}}</option>\n      </select>\n    </label>\n  ",
+                    styles: ["\n    :host{display:block}:host .select-label{display:block;line-height:34px}\n  "]
                 },] },
     ];
     /** @nocollapse */

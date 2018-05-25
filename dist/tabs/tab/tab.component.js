@@ -1,12 +1,12 @@
-var uuid = require('uuid/v4');
-import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
+import uuid from 'uuid/v4';
+import { Component, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 var TabComponent = /** @class */ (function () {
     function TabComponent() {
         this.id = uuid();
         this.activate = new EventEmitter();
         this.active = false;
     }
-    TabComponent.prototype.trackHostClickEvent = function (event) {
+    TabComponent.prototype.trackHostClickEvent = function () {
         this.activate.emit(this.index);
     };
     TabComponent.prototype.setActive = function (bool) {
@@ -15,10 +15,7 @@ var TabComponent = /** @class */ (function () {
     TabComponent.decorators = [
         { type: Component, args: [{
                     selector: 'tab',
-                    template: "{{ title }}",
-                    host: {
-                        '(click)': 'trackHostClickEvent($event)',
-                    }
+                    template: "{{ title }}"
                 },] },
     ];
     /** @nocollapse */
@@ -27,6 +24,7 @@ var TabComponent = /** @class */ (function () {
         "index": [{ type: Input },],
         "activate": [{ type: Output },],
         "active": [{ type: HostBinding, args: ['class.active',] },],
+        "trackHostClickEvent": [{ type: HostListener, args: ['click',] },],
     };
     return TabComponent;
 }());

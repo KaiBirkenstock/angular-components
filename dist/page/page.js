@@ -29,7 +29,8 @@ var PageComponent = /** @class */ (function () {
     PageComponent.decorators = [
         { type: Component, args: [{
                     selector: 'page-component',
-                    template: "\n    <div id=\"page-container\" class=\"page-header-modern main-content-boxed\">\n      <aside id=\"side-overlay\"></aside>\n      <nav id=\"sidebar\"></nav>\n      <main id=\"main-container\">\n        <ng-content></ng-content>\n      </main>\n    </div>\n  "
+                    template: "\n    <div id=\"page-container\" class=\"page-header-modern main-content-boxed\">\n      <aside id=\"side-overlay\"></aside>\n      <nav id=\"sidebar\"></nav>\n      <main id=\"main-container\">\n        <ng-content></ng-content>\n      </main>\n    </div>\n  ",
+                    styles: ["\n\n  "]
                 },] },
     ];
     /** @nocollapse */

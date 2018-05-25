@@ -1,28 +1,26 @@
-const uuid = require('uuid/v4');
-import {Component, EventEmitter, HostBinding, Input, Output} from '@angular/core';
+import uuid from 'uuid/v4';
+import {Component, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
 
 declare let jQuery;
 
 @Component({
   selector: 'tab',
-  template: `{{ title }}`,
-  host: {
-    '(click)': 'trackHostClickEvent($event)',
-  }
+  template: `{{ title }}`
 })
 export class TabComponent {
-  id: string = uuid();
+  private id: string = uuid();
 
-  @Input() title: string;
-  @Input() index: string;
-  @Output() activate: EventEmitter<any> = new EventEmitter();
-  @HostBinding('class.active') active: boolean = false;
+  @Input() public title: string;
+  @Input() public index: string;
+  @Output() private activate: EventEmitter<any> = new EventEmitter();
 
-  trackHostClickEvent(event) {
+  @HostBinding('class.active') private active: boolean = false;
+
+  @HostListener('click') protected trackHostClickEvent() {
     this.activate.emit(this.index);
   }
 
-  setActive(bool) {
+  private setActive(bool) {
     this.active = bool;
   }
 }

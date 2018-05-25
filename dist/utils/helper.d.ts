@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 import { moment } from './momentConfig';
-export declare function toNumber(string: String): number;
+export declare function toNumber(value: string): number;
 export declare function toArray(iterable: any, start?: any, end?: any): any;
 export declare function objectToArray(object: object, keyName?: string, valueName?: string): {}[];
 export declare function decimalAdjust(type: any, value: any, exp?: number): any;
@@ -14,5 +14,4 @@ export declare function formatTime(time: any): any;
 export declare function calcDiffPercentage(value1: number, value2: number): any;
 export declare function getGoodWillValue(value1: number, value2: number, settings: any): boolean;
 export declare function reduce(entries: any, field?: string): any;
-export declare function getWorklogBorderColor(worklog: any, settings: any): "yellow" | "green" | "red";
 export declare function detectIE(): number | false;

@@ -42,7 +42,8 @@ var DatePickerComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'date-picker',
                     template: "<input type=\"text\" [value]=\"value\" class=\"form-control date-picker\" #dateInput  [disabled]=\"disabled\"/>",
-                    inputs: ['disabled']
+                    inputs: ['disabled'],
+                    styles: ["\n    .datepicker.datepicker-dropdown .table-condensed>thead>tr>th,.datepicker.datepicker-dropdown .table-condensed>thead>tr>td,.datepicker.datepicker-dropdown .table-condensed>tbody>tr>th,.datepicker.datepicker-dropdown .table-condensed>tbody>tr>td,.datepicker.datepicker-dropdown .table-condensed>tfoot>tr>th,.datepicker.datepicker-dropdown .table-condensed>tfoot>tr>td{text-align:center}.datepicker.datepicker-dropdown tbody>tr>td{cursor:pointer}.datepicker.datepicker-dropdown>div{display:initial}:host .form-control{padding-left:0;padding-right:0;border-color:transparent;border-radius:0;background-color:transparent;box-shadow:0 1px 0 #dcdfe3;transition:box-shadow .3s ease-out}.datepicker{width:16rem}.datepicker-dropdown:before{border:none}\n  "]
                 },] },
     ];
     /** @nocollapse */
