@@ -59,7 +59,7 @@ var TabsComponent = /** @class */ (function () {
         { type: Component, args: [{
                     selector: 'tabset',
                     template: "<ng-content></ng-content>",
-                    styles: ["\n    :host{display:block;margin:auto;overflow:hidden}:host:after{clear:both}:host>div.tab-collection{overflow:hidden;border-bottom:1px solid #eaecee;background-color:transparent}\n  "]
+                    styles: ["\n    :host{display:block;margin:auto;overflow:hidden}:host:after{clear:both}:host .tab-collection{overflow:hidden;border-bottom:1px solid #eaecee;background-color:transparent}\n  "]
                 },] },
     ];
     /** @nocollapse */

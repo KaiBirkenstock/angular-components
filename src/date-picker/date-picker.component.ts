@@ -6,7 +6,7 @@ require('bootstrap-datepicker');
 
 import {moment} from '../utils/momentConfig';
 
-let datePickerConfig: any = {
+const datePickerConfig: any = {
   format: 'dd.mm.yyyy',
   language: 'de',
   autoclose: true,
@@ -15,23 +15,23 @@ let datePickerConfig: any = {
 
 @Component({
   selector: 'date-picker',
-  template: `<input type="text" [value]="value" class="form-control date-picker" #dateInput  [disabled]="disabled"/>`,
-  inputs: ['disabled'],
+  template: `<input type="text" [value]="value" class="form-control date-picker" #dateInput [formControlName]="formControlName" [disabled]="disabled"/>`,
   styleUrls: ['./date-picker.scss']
 })
 export class DatePickerComponent {
-  @Input() value: 'any';
+  @Input() public value: 'any';
+  @Input() public formControlName: any;
 
-  @ViewChild('dateInput') dateInput: any;
-  @Output('selectionChanged') selectionChanged: EventEmitter<any> = new EventEmitter();
+  @ViewChild('dateInput') private dateInput: any;
+  @Output('selectionChanged') public selectionChanged: EventEmitter<any> = new EventEmitter();
 
-  _disabled: boolean = false;
+  private _disabled: boolean = false;
 
   get disabled() {
     return this._disabled;
   }
 
-  set disabled(value) {
+  @Input() set disabled(value) {
     this._disabled = value;
     if (!value) {
       this.initPicker();
